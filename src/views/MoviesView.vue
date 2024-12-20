@@ -79,8 +79,7 @@ const getGenreName = (id) => genres.value.find((genre) => genre.id === id).name
       />
       <div class="hero-content">
         <h2>{{ randomMovie.title }}</h2>
-        <p>{{ formatDate(randomMovie.release_date) }}</p>
-        <button @click="openMovie(randomMovie.id)">Ver Detalhes</button>
+        <button @click="openMovie(randomMovie.id)" class="button-detalhes">Ver Detalhes</button>
       </div>
     </section>
     <div class="filmes">
@@ -136,7 +135,7 @@ const getGenreName = (id) => genres.value.find((genre) => genre.id === id).name
 <style scoped>
 .hero-section {
   background-color: black;
-  margin-top: -3rem;
+  margin-top: -4rem;
   position: relative;
   height: 58.5rem;
   overflow: hidden;
@@ -146,11 +145,15 @@ const getGenreName = (id) => genres.value.find((genre) => genre.id === id).name
   width: 100%;
   height: 58.5rem;
   object-fit: cover;
-  opacity: 0.7;
+  opacity: 0.6;
   -webkit-mask-image: linear-gradient(to top, transparent 5%, black 100%);
 }
 
+
 .hero-content {
+  gap: 20px;
+  flex-direction: column;
+  display: flex;
   width: 40rem;
   position: absolute;
   bottom: 22rem;
@@ -168,17 +171,19 @@ const getGenreName = (id) => genres.value.find((genre) => genre.id === id).name
 }
 
 .hero-content button {
-  background-color: white;
-  border: none;
-  padding: 0.5rem 1rem;
+  width: 300px;
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 0.5rem 2rem;
   color: #677386;
   cursor: pointer;
   font-size: 1rem;
   border-radius: 0.5rem;
+  transition: 0.3s all ease;
 }
 
 .hero-content button:hover {
-color: #2C343F;
+color: white;
 }
 
 
@@ -189,6 +194,7 @@ color: #2C343F;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  padding-bottom: 50px;
 }
 
 .movie-card {

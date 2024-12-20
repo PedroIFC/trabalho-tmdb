@@ -88,7 +88,6 @@ const openTvShow = (tvShowId) => {
       />
       <div class="hero-content">
         <h2>{{ randomTvShow.name }}</h2>
-        <p>{{ formatDate(randomTvShow.first_air_date) }}</p>
         <button @click="openTvShow(randomTvShow.id)">Ver Detalhes</button>
       </div>
     </section>
@@ -146,7 +145,7 @@ const openTvShow = (tvShowId) => {
 <style scoped>
 .hero-section {
   background-color: black;
-  margin-top: -3rem;
+  margin-top: -4rem;
   position: relative;
   height: 58.5rem;
   overflow: hidden;
@@ -156,11 +155,14 @@ const openTvShow = (tvShowId) => {
   width: 100%;
   height: 58.5rem;
   object-fit: cover;
-  opacity: 0.7;
+  opacity: 0.6;
   -webkit-mask-image: linear-gradient(to top, transparent 5%, black 100%);
 }
 
 .hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   position: absolute;
   bottom: 22rem;
   left: 4rem;
@@ -177,19 +179,20 @@ const openTvShow = (tvShowId) => {
 }
 
 .hero-content button {
-  background-color: white;
-  border: none;
-  padding: 0.5rem 1rem;
+  width: 300px;
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 0.5rem 2rem;
   color: #677386;
   cursor: pointer;
   font-size: 1rem;
   border-radius: 0.5rem;
+  transition: 0.3s all ease;
 }
 
 .hero-content button:hover {
-color: #2C343F;
+color: white;
 }
-
 
 
 

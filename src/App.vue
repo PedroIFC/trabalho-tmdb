@@ -25,10 +25,10 @@ const route = useRoute()
 <template>
   <header :class="sticky ? 'active' : 'disable'" :id="paginaVideo ? 'on' : 'off'">
     <nav>
-      <router-link to="/filmes">Filmes</router-link>
-      <router-link to="/tv">Programas de TV</router-link></nav>
+      <router-link to="/filmes">Films</router-link>
+      <router-link to="/tv">TV Shows</router-link></nav>
       <nav class="pad">
-      <router-link to="/tv"><img src="/src/assets/User.png"></router-link>
+      <router-link to="/"><img src="/src/assets/User.png"></router-link>
       <router-link to="/tv"><img src="/src/assets/Bookmark.png"></router-link></nav>
     
   </header>
@@ -45,7 +45,7 @@ header {
   font-family: 'poppins';
   top: 0;
   position: sticky;
-  height: 3rem;
+  height: 4rem;
   display: flex;
   background-color: transparent;
   color: black;
@@ -57,7 +57,7 @@ header {
 }
 
 .pad{
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 nav {

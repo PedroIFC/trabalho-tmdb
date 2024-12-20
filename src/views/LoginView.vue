@@ -1,7 +1,8 @@
 <template>
+  <div class="all">
     <section class="login-section">
       <div class="login-container">
-        <h2>Entrar na Sua Conta</h2>
+        <h2>Enter your account</h2>
         <form @submit.prevent="handleSubmit">
           <div class="input-group">
             <label for="email">E-mail</label>
@@ -9,28 +10,29 @@
               type="email"
               id="email"
               v-model="email"
-              placeholder="Digite seu e-mail"
+              placeholder="Type your email"
               required
             />
           </div>
           <div class="input-group">
-            <label for="password">Senha</label>
+            <label for="password">Password</label>
             <input
               type="password"
               id="password"
               v-model="password"
-              placeholder="Digite sua senha"
+              placeholder="Type your password"
               required
             />
           </div>
-          <button type="submit" class="login-btn">Entrar</button>
+          <button type="submit" class="login-btn">Login</button>
         </form>
         <p v-if="error" class="error-message">{{ error }}</p>
         <p class="forgot-password">
-          <a href="#">Esqueceu sua senha?</a>
+          <a href="#">Forgot your password?</a>
         </p>
       </div>
     </section>
+  </div>
   </template>
   
   <script setup>
